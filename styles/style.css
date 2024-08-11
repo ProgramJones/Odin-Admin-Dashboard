@@ -1,0 +1,74 @@
+:root {
+    --left-of-page-background: #1992D3;
+    --left-of-page-color: white;
+
+}
+
+body {
+    display: grid;
+    grid-template: 20vh 80vh / 200px 1fr;
+    grid-template-areas:
+        "left-of-page header"
+        "left-of-page right-of-page";
+}
+
+#left-of-page {
+    background-color: var(--left-of-page-background);
+    color: var(--left-of-page-color);
+    font-weight: bold;
+
+    grid-area: left-of-page;
+    display: grid;
+    grid-template-rows: 10% 35% 50%;
+}
+
+#left-of-page #logo {
+    padding: 16px;
+}
+
+#left-of-page #upper-nav ul,
+#left-of-page #lower-nav ul {
+    list-style: none;
+
+    display: grid;
+    gap: 16px;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+
+    display: grid;
+    grid-template-rows: 50% 50%;
+
+}
+
+header #top-of-header {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr;
+    padding: 16px;
+    gap: 16px;
+}
+
+header #bottom-of-header {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr;
+    padding: 16px;
+    gap: 16px;
+}
+
+#top-of-header-right,
+#bottom-of-header-right {
+    display: flex;
+}
+
+/* #top-of-header-right:nth-child(2),
+#bottom-of-header-right:nth-child(2) {
+    margin-left: 8px;
+    margin-right: 8px;
+} */
+
+#right-of-page {
+    grid-area: right-of-page;
+    background-color: #E2E8F0;
+}
