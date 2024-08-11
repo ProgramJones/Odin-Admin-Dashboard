@@ -1,6 +1,7 @@
 :root {
     --left-of-page-background: #1992D3;
     --left-of-page-color: white;
+    background-color: #E2E8F0;
 
 }
 
@@ -70,14 +71,15 @@ header #bottom-of-header {
     background-color: #E2E8F0;
 
     display: grid;
-    grid-template: 700px 1fr / 3fr 1fr;
+    grid-template: 600px 1fr / 3fr 1fr;
     grid-template-areas:
         "projects announcements"
-        "projects trending";
+        "projects trending"
 }
 
 #projects {
     padding: 24px;
+    /* overflow: auto; */
 }
 
 #projects>p {
