@@ -77,7 +77,25 @@ header #bottom-of-header {
 }
 
 #projects {
+    padding: 24px;
+}
+
+#projects>p {
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+#projects-content {
     grid-area: projects;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    row-gap: 25px;
+    column-gap: 20px;
+}
+
+.project-card {
+    background-color: white;
 }
 
 #announcements {
