@@ -5,6 +5,12 @@
 
 }
 
+img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
 header,
 #right-of-page {
     margin-left: 200px;
@@ -17,20 +23,39 @@ header,
     width: 200px;
     height: 100vh;
 
-    grid-area: left-of-page;
-    display: grid;
-    grid-template-rows: 10% 35% 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 
     position: fixed;
 }
 
 #left-of-page #logo {
     padding: 16px;
+
+}
+
+svg {
+    fill: white;
+    width: 20px;
+    margin-right: 16px;
+}
+
+#logo svg {
+    width: 32px;
+
+}
+
+li,
+#logo {
+    display: flex;
+    align-items: center;
 }
 
 #left-of-page #upper-nav ul,
 #left-of-page #lower-nav ul {
     list-style: none;
+    padding-left: 24px;
 
     display: grid;
     gap: 16px;
@@ -45,11 +70,34 @@ header {
 
 }
 
+header svg {
+    fill: black;
+}
+
 header #top-of-header {
     display: grid;
-    grid-template-columns: 100px 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding: 16px;
-    gap: 16px;
+    gap: 128px;
+    align-items: center;
+
+}
+
+#top-of-header form {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+#top-of-header form input {
+    width: 100%;
+}
+
+#search-bar {
+    background-color: #E2E8F0;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
 }
 
 header #bottom-of-header {
@@ -57,13 +105,51 @@ header #bottom-of-header {
     grid-template-columns: 50px 2fr 1fr;
     padding: 16px;
     gap: 16px;
+    font-weight: bold;
 }
 
-#top-of-header-right,
+#bottom-of-header-text p:first-child {
+    font-size: .8rem;
+}
+
+#bottom-of-header-text p:last-child {
+    font-size: 1.2rem;
+}
+
+.header-button {
+    background-color: #1992D3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    height: fit-content;
+    padding: 8px 24px;
+}
+
 #bottom-of-header-right {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
+}
+
+#search-icon {
+    justify-self: center;
+    align-self: center;
+}
+
+#top-of-header-right {
+    display: grid;
+    grid-template-columns: 25px 50px 150px;
+    justify-content: end;
+    gap: 24px;
+    align-items: center;
+}
+
+#top-of-header-right svg {
+    padding: 0;
+}
+
+#top-of-header-right p {
+    font-weight: bold;
 }
 
 #right-of-page {
@@ -71,15 +157,14 @@ header #bottom-of-header {
     background-color: #E2E8F0;
 
     display: grid;
-    grid-template: 600px 1fr / 3fr 1fr;
+    grid-template: 1fr / 3fr 1fr;
     grid-template-areas:
-        "projects announcements"
-        "projects trending"
+        "projects side-content"
+        "projects side-content"
 }
 
 #projects {
     padding: 24px;
-    /* overflow: auto; */
 }
 
 #projects>p {
@@ -112,33 +197,60 @@ header #bottom-of-header {
     font-size: .8rem;
 }
 
-#announcements {
-    grid-area: announcements;
-    padding: 24px;
+
+#side-content {
+    grid-area: side-content;
 }
 
-#announcements p:first-child {
-    margin-bottom: 16px;
+#announcements {
+    padding: 24px;
 }
 
 #announcements>p {
     font-weight: bold;
+    margin-bottom: 16px;
 }
 
 .announcement-card {
     background-color: white;
-    padding: 16px;
+    padding: 0 24px;
+}
+
+.announcement-card-text>strong {
+    font-size: .9rem;
+    display: inline-block;
+    padding-top: 16px;
+}
+
+.announcement-card-text>p {
+    font-size: .7rem;
+    padding-bottom: 16px;
+}
+
+.announcement-card:nth-child(2) strong {
+    padding-top: 32px;
+}
+
+.announcement-card-text:last-child>p {
+    padding-bottom: 32px;
+}
+
+.announcement-card-text {
+    width: 95%;
+    position: relative;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+hr {
+    opacity: .3;
 }
 
 #trending {
-    grid-area: trending;
     margin-bottom: 20px;
-    margin-right: 20px;
     padding: 24px;
-}
-
-#trending p:first-child {
-    margin-bottom: 16px;
 }
 
 #trending>p {
@@ -151,8 +263,23 @@ header #bottom-of-header {
     padding: 16px;
 
     display: grid;
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 50px 175px;
     gap: 20px;
+}
+
+.trending-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trending-card-text .user {
+    font-size: .8rem;
+    margin: 0;
+}
+
+.trending-card-text .user-name {
+    font-size: .9rem;
 }
 
 .announcement-card:nth-child(2),
@@ -165,4 +292,12 @@ header #bottom-of-header {
 #trending .trending-card:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+#logo {
+    font-size: 1.3rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
 }
