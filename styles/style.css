@@ -96,6 +96,18 @@ header #bottom-of-header {
 
 .project-card {
     background-color: white;
+    border-left: 7px solid #F0B329;
+    border-radius: 5px;
+    padding: 24px;
+    height: 200px;
+}
+
+.project-card-text p:first-child {
+    font-weight: bold;
+}
+
+.project-card-text p:last-child {
+    font-size: .8rem;
 }
 
 #announcements {
